@@ -70,4 +70,19 @@ g = retrodesign(A, s, alpha=.05, df=Inf, n.sims=10000)
 h = c("The type S error is " ,g$typeS,"The power is" ,g$power, "The exaggeration factor(M error) is",g$exaggeration )
 return(h)
 }
-
+randomplot <- function(n, dist=c("normal", "uniform")){
+  #input validation
+  dist <- match.arg(dist)
+  stopifnot(n < 1e6)
+  
+  if(dist == "normal"){
+    hist(rnorm(n))
+  }
+  
+  if(dist == "uniform"){
+    hist(runif(n))
+  }
+  
+  #return nothing
+  invisible();  
+}
