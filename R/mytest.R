@@ -67,7 +67,7 @@ retropower<- function(A, s)
   {
 g = retrodesign(A, s, alpha=.05, df=Inf, n.sims=10000)
 
-h = c("The type S error is " ,g$typeS,"The power is" ,g$power, "The exaggeration factor(M error) is",g$exaggeration )
+h = paste("The type S error is " ,g$typeS,"The power is" ,g$power, "The exaggeration factor(M error) is",g$exaggeration )
 return(h)
 }
 randomplot <- function(n, dist=c("normal", "uniform")){
